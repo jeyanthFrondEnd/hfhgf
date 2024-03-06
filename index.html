@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newjs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="frontPage" id="frontPage">
+        <h2>You are created a new Account</h2>
+        <p >   Welcome to our web page</p>
+        <a href="#"><button id="myButton">Go to My web</button></a>
+       </div>
+        <div class="form-container create-container">
+            
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="icon-container">
+                <a href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                </div>
+                <span>Register for gmail</span>
+                <span class="input">
+                <input type="text" placeholder="Name" id="text">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password" id="password">
+                </span>
+                <span class="hide" style="display: flex;justify-content: center; align-items: center; position:absolute; left: 20px; top: 78%;">
+                <input type="checkbox" id="checkbox" onclick="check()" ><label id="label">Unhide</label>
+                </span>
+                <button id="button">Log in</button>
+            </form>
+        </div>
+        <div class="form-container sign-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="icon-container">
+                <a href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                </div>
+                <span>Register for gmail</span>
+                <span class="input-one">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password" id="password">
+                </span>
+                <span class="hide" style="display: flex;justify-content: center; align-items: center; position: absolute; left: 20px; top:69%;">
+                <input type="checkbox" id="checkbox" onclick="check()"><label id="label">Unhide</label>
+                </span>
+                <button>Sign in</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Login register</h1>
+                <p>Quckly register your Account</p>
+                <button class="press" id="logIn">sign in</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Signin register</h1>
+                <p>Quckly register your Account</p>
+                <button class="press" id="signIn">Create Account</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var frontPage =document.getElementById('frontPage');
+        var checkbox =document.getElementById('checkbox')
+        var myButton=document.getElementById('myButton')
+        var button =document.getElementById('button')
+        var signin = document.getElementById('logIn');
+        var signup = document.getElementById('signIn');
+        var container = document.getElementById('container');
+
+        button.addEventListener('click', () =>{
+            frontPage.style.display='block';
+        })
+        myButton.addEventListener('click',() =>{
+            frontPage.style.display='none';
+        })
+        signup.addEventListener('click',() =>{
+            container.classList.add('right-panel-active')
+        })
+        signin.addEventListener('click',() =>{
+            container.classList.remove('right-panel-active')
+        })
+
+        function check(){
+            var password =document.querySelector('#password')
+            var checkbox =document.querySelector('#checkbox')
+            var label =document.querySelector('#label')
+
+            
+            if(checkbox.checked){
+                password.setAttribute('type','text')
+                label.innerHTML ='Hide';
+            }
+            else{
+                password.setAttribute('type','password')
+                label.innerHTML ='Unhide';
+            }
+        }
+
+ 
+    </script>
+</body>
+</html>
